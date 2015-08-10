@@ -14,8 +14,8 @@ Basic Instructions
 
 ftclient
 
-    usage: python2 ftclient <server-hostname> <server-port> -l|-g
-                            [<filename>] <data-port>
+    usage: python2 ftclient.py <server-hostname> <server-port> -l|-g
+                               [<filename>] <data-port>
 
         <server-hostname> - IP address of server (dotted-quad or domain name)
 
@@ -40,15 +40,54 @@ ftserver
 
 Example
 
+      flip2 % ftserver 30020
+      ftserver: FTP server open on port 30020
+
+      ftserver: FTP control connection established with "128.193.54.226"
+        Receiving data port (FTP active mode) ...
+        Receiving command ...
+        Transmitting data-connection go-ahead ...
+      ftserver: FTP data connection established with "128.193.54.226"
+        Transmitting file listing ...
+        Transmitting connection-termination go-ahead ...
+      ftserver: FTP data connection closedflip1
+
+      ftserver: FTP control connection established with "128.193.54.226"
+        Receiving data port (FTP active mode) ...
+        Receiving command ...
+        Transmitting data-connection go-ahead ...
+      ftserver: FTP data connection established with "128.193.54.226"
+        Transmitting file ...
+        Transmitting connection-termination go-ahead ...
+      ftserver: FTP data connection closed
+
     FTP SERVER
     ---------------------------------------------------------
     FTP CLIENT
+
+      flip1 % python2 ftclient.py flip2 30020 -l 30021
+      ftclient: FTP control connection established with "128.193.54.7"
+        Transmitting data port (FTP active mode) ...
+        Transmitting command ...
+      ftclient: FTP data connection established with "128.193.54.7"
+      ftclient: File listing on "128.193.54.7"
+        ftserver
+        lipsum.txt
+      ftclient: FTP control connection closed
+
+      flip1 % python2 ftclient.py flip2 30020 -g lipsum.txt 30021
+      ftclient: FTP control connection established with "128.193.54.7"
+        Transmitting data port (FTP active mode) ...
+        Transmitting command ...
+      ftclient: FTP data connection established with "128.193.54.7"
+      fclient: File transfer complete
+      ftclient: FTP control connection closed
 
 Sources
 
     Wikipedia - File Transfer Protocol
 
-      https://en.wikipedia.org/wiki/File_Transfer_Protocol
+        https://en.wikipedia.org/wiki/File_Transfer_Protocol
 
     Beej's Guide to Network Programming
 
