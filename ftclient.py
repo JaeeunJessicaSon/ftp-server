@@ -303,7 +303,7 @@ def sendPacket(socket, tag = "", data = ""):
         sys.exit(1)
 
 
-# Function: startChatClient
+# Function: startFtpClient
 #
 # Purpose:  This function establishes an FTP control connection between the
 #           client and given server.
