@@ -609,6 +609,7 @@ void startFtpServer(int port)
 	}
 
 	// Provide FTP services to clients until interrupted.
+	printf("ftserver: FTP server open on port %d\n", port);
 	while (1) {
 		char *clientIPv4;                   // Client dotted-decimal address
 		char commandTag[TAG_LEN + 1];       // Buffer to store command tag
