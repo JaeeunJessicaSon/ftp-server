@@ -254,7 +254,7 @@ def runDataSession(controlSocket, dataSocket):
                 while intag != "DONE":
                     intag, indata = recvPacket(dataSocket)
                     outfile.write(indata)
-            print "fclient: File transfer complete"
+            print "ftclient: File transfer complete"
 
     # An error occurred.
     else:

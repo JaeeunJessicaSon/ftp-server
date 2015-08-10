@@ -80,7 +80,7 @@ Example
         Transmitting data port (FTP active mode) ...
         Transmitting command ...
       ftclient: FTP data connection established with "128.193.54.7"
-      fclient: File transfer complete
+      ftclient: File transfer complete
       ftclient: FTP control connection closed
 
 Sources
