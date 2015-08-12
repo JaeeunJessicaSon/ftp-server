@@ -257,7 +257,7 @@ void recvAll(int socket, void *buffer, int numBytes)
  *           Network Programming.
  *                              _   Header
  *             length - 2 bytes  |_/
- *             tag    - 4 bytes _|
+ *             tag    - 8 bytes _|
  *             data   - X bytes
  *
  * Receives: socket - connection endpoint on which to receive data
@@ -515,7 +515,7 @@ void sendAll(int socket, void *buffer, int numBytes)
  *           Network Programming.
  *                              _   Header
  *             length - 2 bytes  |_/
- *             tag    - 4 bytes _|
+ *             tag    - 8 bytes _|
  *             data   - X bytes
  *
  * Receives: socket - connection endpoint on which to send data
